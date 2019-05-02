@@ -1,0 +1,19 @@
+<h3>Vehicle Service Management System</h3>
+<form>
+  <div class="row" *ngFor="let req of requests | keys">
+<div class="col-12">
+  <app-request [reqKey]="req"></app-request>
+</div>
+  </div>
+  <div class="row">
+      <div class="col">
+      </div>
+      <div class="col-1">
+        <input type="button" value="Undo" class="btn btn-secondary" (click)="undo()">
+      </div>
+      <div class="col-2">
+        <input [routerLink]="['/newReq', true]" type="button" value="Add New Request" class="btn btn-success">
+
+      </div>
+    </div>
+</form>
