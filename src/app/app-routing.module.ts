@@ -7,8 +7,11 @@ import { HomeComponent } from './home/home.component';
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
-  {path: 'newReq/:editable', component: RequestFormComponent},
-  {path: 'newReq/:editable/:reqKey', component: RequestFormComponent}];
+  {path: 'newReq/:editable', children:[
+    {path: '', component: RequestFormComponent},
+    {path: ':reqKey', component: RequestFormComponent}]
+   },
+  ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
