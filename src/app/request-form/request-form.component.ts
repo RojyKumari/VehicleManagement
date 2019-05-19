@@ -21,8 +21,8 @@ export class RequestFormComponent implements OnInit {
 
   ngOnInit() {
     this.editable = JSON.parse(this.route.snapshot.paramMap.get('editable'));
-    if (!this.editable){
-      this.reqKey = this.route.snapshot.paramMap.get('reqKey');
+    this.reqKey = this.route.snapshot.paramMap.get('reqKey');
+    if (this.reqKey){
       this.requestObject = this.storageService.getRequest(this.reqKey);
     } else {
       this.requestObject = {
@@ -38,6 +38,7 @@ export class RequestFormComponent implements OnInit {
   }
 
   submitRequest(form){
+    form.value.vehicleRegNumber = form.value.vehicleRegNumber || this.reqKey;
     this.storageService.addRequest(<Request>form.value);
     this.router.navigate(['/home']);
     console.log(form.value);

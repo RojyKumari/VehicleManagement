@@ -9,48 +9,48 @@
     <label class="col-4">First name:</label>
     <div class="col-8">
       <input type="text" class="form-control" [(ngModel)]="requestObject.firstName" name="firstName"
-        [ngClass]="{'form-control': editable, 'form-control-plaintext': !editable}" required>
+        [ngClass]="{'form-control': editable, 'form-control-plaintext': !editable}" [disabled]="!editable" required>
     </div>
   </div>
   <div class="form-group row">
     <label class="col-4">Last name:</label>
     <div class="col-8">
-      <input type="text" class="form-control"  [(ngModel)]="requestObject.lastName" name="lastName"
+      <input type="text" class="form-control"  [(ngModel)]="requestObject.lastName" name="lastName" [disabled]="!editable"
         [ngClass]="{'form-control': editable, 'form-control-plaintext': !editable}">
     </div>
   </div>
   <div class="form-group row">
     <label class="col-4">Vehicle registration number:</label>
     <div class="col-8">
-      <input type="text" class="form-control"  [(ngModel)]="requestObject.vehicleRegNumber" name="vehicleRegNumber"
-        [ngClass]="{'form-control': editable, 'form-control-plaintext': !editable}" required>
+      <input type="text" class="form-control"  [(ngModel)]="requestObject.vehicleRegNumber" name="vehicleRegNumber" [disabled]="!editable || (editable && reqKey)"
+        [ngClass]="{'form-control': editable && !reqKey, 'form-control-plaintext': !editable}" required>
     </div>
   </div>
   <div class="form-group row">
     <label class="col-4">Mobile number:</label>
     <div class="col-8">
-      <input type="text" class="form-control"  [(ngModel)]="requestObject.mobileNumber" name="mobileNumber"
+      <input type="text" class="form-control"  [(ngModel)]="requestObject.mobileNumber" name="mobileNumber"  [disabled]="!editable"
         [ngClass]="{'form-control': editable, 'form-control-plaintext': !editable}" required>
     </div>
   </div>
   <div class="form-group row">
     <label class="col-4">Address:</label>
     <div class="col-8">
-      <input type="text" class="form-control"  [(ngModel)]="requestObject.address" name="address"
+      <input type="text" class="form-control"  [(ngModel)]="requestObject.address" name="address"  [disabled]="!editable"
         [ngClass]="{'form-control': editable, 'form-control-plaintext': !editable}" required>
     </div>
   </div>
   <div class="form-group row">
     <label class="col-4">Pickup date:</label>
     <div class="col-8">
-      <input type="text" class="form-control"  [(ngModel)]="requestObject.pickupDate" name="pickupDate"
+      <input type="text" class="form-control"  [(ngModel)]="requestObject.pickupDate" name="pickupDate"  [disabled]="!editable"
         [ngClass]="{'form-control': editable, 'form-control-plaintext': !editable}" required>
     </div>
   </div>
   <div class="form-group row">
       <label class="col-4">Return date:</label>
       <div class="col-8">
-        <input type="text" class="form-control"  [(ngModel)]="requestObject.returnDate" name="returnDate"
+        <input type="text" class="form-control"  [(ngModel)]="requestObject.returnDate" name="returnDate"  [disabled]="!editable"
           [ngClass]="{'form-control': editable, 'form-control-plaintext': !editable}" required>
       </div>
     </div>

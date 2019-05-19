@@ -3,6 +3,7 @@
       <label class="col">{{request?.firstName}} {{request?.lastName}}</label>
       <label class="col">{{reqKey}}</label>
       <button class="btn btn-primary col-1 btn-sm" [routerLink]="['/newReq', false, reqKey]">View</button>
+      <button class="btn btn-secondary col-1 btn-sm ml-3" [routerLink]="['/newReq', true, reqKey]">Edit</button>
       <button class="btn btn-danger col-1 btn-sm ml-3" (click)="deleteRequest()">Delete</button>
   </div>
 
